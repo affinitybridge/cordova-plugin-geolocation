@@ -35,7 +35,6 @@ module.exports = {
             },
             getCurrentPosPolyfill = function () {
                 var geo = require('./polyfill');
-                console.log(geo);
                 geo.getCurrentPosition(success, error, args);
             },
             permissionFail = function() {
