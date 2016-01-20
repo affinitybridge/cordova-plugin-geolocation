@@ -45,7 +45,16 @@ public class Geolocation extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         Log.d(TAG, "We are entering execute");
         context = callbackContext;
-        if(action.equals("getPermission"))
+        if (action.equals("useNativeGeolocationAPI"))
+        {
+            if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                context.error("Geolocation polyfill required.");
+            } else {
+                context.success("Native geolocation API available.");
+            }
+            return true;
+        }
+        else if(action.equals("getPermission"))
         {
             if(hasPermisssion())
             {
