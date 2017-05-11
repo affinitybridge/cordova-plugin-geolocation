@@ -119,7 +119,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </js-module>
 
         <config-file target="config.xml" parent="/*">
-                <feature name="Geolocation">
+                <feature name="GeolocationPolyfill">
                     <param name="ios-package" value="CDVLocation"/>
                 </feature>
         </config-file>
